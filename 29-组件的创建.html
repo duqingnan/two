@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        <hello></hello>
+        <world></world>
+        <hi></hi>
+        <go></go>
+    </div>
+
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function () {
+            //局部组件，必须注册
+            //创建组件1111
+            let hello = {
+                template:"<h1>hello components</h1>",
+                /*render(h){
+                    return h("h1",{},"hello render")
+                }*/
+            }
+            //局部组件，必须注册3333
+            let hi = Vue.extend({
+                template:"<h1>第三种发放呀</h1>",
+            })
+            //全局组件  直接使用22222
+            Vue.component("world",{
+                template:"<h1>hello world</h1>",
+            })
+
+
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:"hello vue"
+                },
+                methods:{
+
+                },
+
+                //注册组件
+                components:{
+                    hello,
+                    hi,
+                    //局部组件4444
+                    go:{
+                        template:"<h1>第四种</h1>",
+                    }
+                }
+            })
+
+
+        })()
+    </script>
+</body>
+</html>

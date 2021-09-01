@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <hl>{{show}}</hl>
+    </div>
+<script src="vue/dist/vue.js"></script>
+<script>
+    (function () {
+        new Vue({
+            el:"#app",
+            computed:{
+                show(){
+                    return "hello hanshu"
+                }
+            },
+            methods:{
+                /*show(){
+                    //return "hello hanshu"
+                }*/
+            }
+        })
+    })()
+</script>
+</body>
+</html>

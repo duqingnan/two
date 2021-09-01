@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+        <!--view创建的第一种方式-->
+
+    </div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            let res = Vue.compile("<div><h1>hello out html</h1></div>")
+            let vm = new Vue({
+                el:"#app",
+                template:  `<h1>hello vue</h1>>`,
+                /*render(createElement){
+                    return createElement("div",{},[
+                        createElement("h1",{},"我是h1"),
+                        createElement("p",{},[
+                            createElement("span",{},"我是p标签中的span标签")
+                        ])
+                    ])
+                }*/
+                render:res.render,
+                staticRenderFns:res.staticRenderFns
+            })
+
+            let vnodetree = vm.$createElement("div",{},"hello vnodetree");
+            console.log(vnodetree);
+        })()
+    </script>
+</body>
+</html>

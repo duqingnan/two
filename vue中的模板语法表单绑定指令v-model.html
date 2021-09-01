@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--step1:创建视图-->
+<div id="app" v-cloak>
+
+    <h1>用户注册</h1>
+    用户名： <input v-model="userForm.username" type="text">
+    密码： <input v-model="userForm.pass" type="password">
+    <hr>
+    <button @click="regUser">注册用户</button>
+    {{userForm}}
+</div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            new Vue({
+                el:"#app",
+                data:{
+                    userForm:{
+                        username:"x",
+                        pass:""
+                    }
+                },
+                methods:{ //用来组织逻辑或者事件响应的方法
+                    regUser(){
+                        console.log(this.userForm)
+                    }
+                }
+            })
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--step1:创建视图-->
+    <div id="app">
+        <ul>
+            <li>
+                <h1>{{users[0].name}}</h1>
+                <p>{{users[0].profile}}</p>
+            </li>
+            <li>
+                <h1>{{users[1].name}}</h1>
+                <p>{{users[1].profile}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            //step2:创建一个viewmodel
+            //step3:根据view的数据结构集合 Proxy set get watcher
+            let vm = new Vue({
+                el:"#app",
+                data:{users:[
+                    {
+                    name:"张三",
+                    profile:"张三...."
+                    },
+                    {
+                    name:"李四",
+                    profile:"李四...."
+                        }]}
+            })
+        })()
+    </script>
+</body>
+</html>

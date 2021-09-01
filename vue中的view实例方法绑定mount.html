@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--step1:创建视图-->
+    <div id="app">
+      {{msg}}
+    </div>
+
+    <div id="app1">
+        {{msg}}
+    </div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            //step2:创建一个viewmodel
+            //step3:根据view的数据结构集合 Proxy set get watcher
+            let vm = new Vue({
+                el:"#app",
+                data:{
+                    msg:"hello mount"
+                }
+            })
+            vm.$mount("#app1");//当el时，mount显示不出来
+        })()
+    </script>
+</body>
+</html>

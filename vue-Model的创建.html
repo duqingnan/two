@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--step1  view-->
+<div id="app1">
+    {{1+1}}
+</div>
+<div id="app2">
+    {{1+1}}  <!--如果绑定viewmodel，则计算，如果没有绑定，则输出字符串-->
+</div>
+<script src = "vue/dist/vue.js"></script>
+<script>
+    (function () {
+        //step2:根据view来创建一个viewmodel（双向绑定的控制器）
+        // console.log(new Vue())
+       // let vm1 = new Vue();  //创建一个空的viewModel
+        //绑定视图
+        let options = {
+           // el:document.querySelector("#app1")
+            el:"#app1"
+        }
+        let vm1 = new Vue(options);
+         let vm2 = new Vue({el:"#app2"});//$el指向view的位置
+        //let vm2 = new Vue(options);  //$el
+    })()
+</script>
+</body>
+</html>

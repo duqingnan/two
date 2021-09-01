@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--view创建的第一种方式-->
+        <h1>用户列表</h1>
+        <ul>
+            <li>
+                <h1>{{users[0].name}}</h1>
+                <p>{{users[0].profile}}</p>
+            </li>
+            <li>
+                <h1>{{users[1].name}}</h1>
+                <p>{{users[1].profile}}</p>
+            </li>
+        </ul>
+    </div>
+    <div id="app2"></div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            //step2:创建一个viewmodel
+            //step3:根据view的数据结构集合 Proxy set get watcher
+            let vm = new Vue({
+                el:"#app",
+                data:{users:[
+                    {
+                    name:"张三",
+                    profile:"张三...."
+                    },
+                    {
+                    name:"李四",
+                    profile:"李四...."
+                        }]}
+            })
+            new Vue({
+                el:"#app2",
+                data:{users:[
+                        {
+                            name:"张三",
+                            profile:"张三...."
+                        },
+                        {
+                            name:"李四",
+                            profile:"李四...."
+                        }
+                        ],
+                },
+                //view创建的第二种方式
+                template:`
+                <section>
+                <h1>用户列表</h1>
+                <ul>
+                    <li>
+                        <h1>{{users[0].name}}</h1>
+                        <p>{{users[0].profile}}</p>
+                     </li>
+                    <li>
+                         <h1>{{users[1].name}}</h1>
+                        <p>{{users[1].profile}}</p>
+                    </li>
+                </ul>
+                 </section>`
+            })
+
+        })()
+    </script>
+</body>
+</html>

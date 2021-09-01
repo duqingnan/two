@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--step1:创建视图-->
+    <div id="app" v-cloak>
+        <!--v-bind可能出错，可以省略，直接：-->
+        <img :src="pic" alt="">
+<!--        {{show()}}&lt;!&ndash;最好不要插值表达式方法&ndash;&gt;-->
+    </div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            new Vue({
+                    el:"#app",
+                    data:{
+                        pic:"assets/images/1.jpg"
+                    }
+            })
+        })()
+    </script>
+</body>
+</html>

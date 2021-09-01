@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--step1:创建视图-->
+    <div id="app">
+        {{title}}<br>
+        {{user.name}}
+<!--        {{show()}}&lt;!&ndash;最好不要插值表达式方法&ndash;&gt;-->
+    </div>
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            new Vue({
+                    el:"#app",
+                    data:{
+                        title:"vue模板",
+                        user:{
+                            name:"dudu"
+                        }
+                    },
+                    methods:{
+                        show(){
+                            return "hello show"
+                        }
+                    }
+            })
+        })()
+    </script>
+</body>
+</html>

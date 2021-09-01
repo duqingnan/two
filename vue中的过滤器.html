@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--step1:创建视图-->
+    <div id="app">
+      {{msg | new}}
+    </div>
+
+    <script src="vue/dist/vue.js"></script>
+    <script>
+        (function(){
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:"南南"
+                },
+                filters:{
+                    new(c){
+                        return "你好啊" + c + "你好帅！"
+                    }
+                }
+            })
+
+        })()
+    </script>
+</body>
+</html>
